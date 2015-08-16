@@ -11,6 +11,7 @@ if (!isUser())
     header('Location: /login-form.php');
     exit;
 }
+session_start();
 
 $title = $_POST['title'];
 $text = $_POST['text'];
@@ -18,11 +19,12 @@ $author = $_COOKIE['userId'];
 $date = date("Y-m-d H-i-s");
 
 sql_connect();
-$resource = sql_query_insert_article($title, $text, $author, $date);
+$res = sql_query_insert_article($title, $text, $author, $date);
 
-if (true == $resource)
+if (true == $res)
 {
-    $_SESSION['add_article_report'] = 'Статья: ' . $title . 'успешно добавлена';
+    $_SESSION['add_article_report'] = 'Статья: " ' . $title . '" успешно добавлена';
+
 } else
 {
     $_SESSION['add_article_report'] = 'Ошибка! Статья не была добавлена :( ';

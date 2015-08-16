@@ -13,6 +13,7 @@ if (!isUser())
     header('Location: /login-form.php');
     exit;
 }
+
 if (isset($_SESSION['add_article_report']))
 {
     $add_article_report = $_SESSION['add_article_report'];

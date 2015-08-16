@@ -51,7 +51,7 @@ function sql_fetch($res){
 }
 
 function sql_query_insert_article($title, $text, $author, $date = '', $tags = ''){
-    $resource = sql_query("INSERT INTO news(`title`, `text`, `author`, `date`, `tags`) VALUES ('$title', '$text', '$author', '$date', '$tags')");
+    $res = sql_query("INSERT INTO news(`title`, `text`, `author`, `date`, `tags`) VALUES ('$title', '$text', '$author', '$date', '$tags')");
     return $res;
 }
 

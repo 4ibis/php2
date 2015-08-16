@@ -12,7 +12,7 @@ if (!isUser())
     header('Location: /login-form.php');
     exit;
 }
-(int) $id = $_GET['id'];
+(int)$id = $_GET['id'];
 
 $query = "SELECT * FROM news WHERE id={$id}";
 
